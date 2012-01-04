@@ -49,7 +49,7 @@ own set of patterns.
 %install
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-english <<EOF
-%% from hyphen-english:
+\%\% from hyphen-english:
 ukenglish loadhyph-en-gb.tex
 =british
 =UKenglish
@@ -57,7 +57,7 @@ usenglishmax loadhyph-en-us.tex
 EOF
 mkdir -p %{buildroot}%{_texmf_language_def_d}
 cat > %{buildroot}%{_texmf_language_def_d}/hyphen-english <<EOF
-%% from hyphen-english:
+\%\% from hyphen-english:
 \addlanguage{ukenglish}{loadhyph-en-gb.tex}{}{2}{3}
 \addlanguage{british}{loadhyph-en-gb.tex}{}{2}{3}
 \addlanguage{UKenglish}{loadhyph-en-gb.tex}{}{2}{3}
