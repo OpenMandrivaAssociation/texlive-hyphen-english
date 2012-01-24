@@ -5,8 +5,8 @@
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-hyphen-english
-Version:	20111103
-Release:	2
+Version:	20120124
+Release:	1
 Summary:	English hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
@@ -49,20 +49,22 @@ own set of patterns.
 %install
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-english <<EOF
-\%\% from hyphen-english:
+\%% from hyphen-english:
 ukenglish loadhyph-en-gb.tex
 =british
 =UKenglish
 usenglishmax loadhyph-en-us.tex
 EOF
+perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_dat_d}/hyphen-english
 mkdir -p %{buildroot}%{_texmf_language_def_d}
 cat > %{buildroot}%{_texmf_language_def_d}/hyphen-english <<EOF
-\%\% from hyphen-english:
+\%% from hyphen-english:
 \addlanguage{ukenglish}{loadhyph-en-gb.tex}{}{2}{3}
 \addlanguage{british}{loadhyph-en-gb.tex}{}{2}{3}
 \addlanguage{UKenglish}{loadhyph-en-gb.tex}{}{2}{3}
 \addlanguage{usenglishmax}{loadhyph-en-us.tex}{}{2}{3}
 EOF
+perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_def_d}/hyphen-english
 mkdir -p %{buildroot}%{_texmf_language_lua_d}
 cat > %{buildroot}%{_texmf_language_lua_d}/hyphen-english <<EOF
 -- from hyphen-english:
