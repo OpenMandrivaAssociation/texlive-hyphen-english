@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-hyphen-english
 Version:	20120611
-Release:	7
+Release:	8
 Summary:	English hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
