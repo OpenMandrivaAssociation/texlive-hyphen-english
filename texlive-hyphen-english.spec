@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-hyphen-english
 Version:	20180303
-Release:	1
+Release:	2
 Summary:	English hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
@@ -36,6 +36,8 @@ own set of patterns.
 
 #-----------------------------------------------------------------------
 %files
+%{_texmfdistdir}/tex/generic/hyph-utf8/loadhyph/*
+%{_texmfdistdir}/tex/generic/hyph-utf8/patterns/*/*
 %_texmf_language_dat_d/hyphen-english
 %_texmf_language_def_d/hyphen-english
 %_texmf_language_lua_d/hyphen-english
@@ -47,6 +49,9 @@ own set of patterns.
 %build
 
 %install
+mkdir -p %{buildroot}%{_texmfdistdir}
+cp -fpar tex %{buildroot}%{_texmfdistdir}
+
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-english <<EOF
 \%% from hyphen-english:
