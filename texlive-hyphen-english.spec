@@ -3,7 +3,7 @@ Version:	58609
 Release:	2
 Summary:	English hyphenation patterns
 Group:		Publishing
-URL:		http://tug.org/texlive
+URL:		https://tug.org/texlive
 License:	http://www.tug.org/texlive/LICENSE.TL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/hyphen-english.r%{version}.tar.xz
 BuildArch:	noarch
